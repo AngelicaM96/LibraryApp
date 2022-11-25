@@ -1,14 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.UI.Fragments.Fragment_compras">
+    tools:context=".View.UI.Fragments.Fragment_compras"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="carrito" />
+        android:orientation="vertical"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="95dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="#A9883507"
+            >
+            <ImageView
+                android:id="@+id/img_unlee"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_carrito"
+                ></ImageView>
+            <TextView
+                android:id="@+id/txt_welcome"
+                android:layout_width="280dp"
+                android:layout_height="115dp"
+                android:gravity="center"
+                android:text="COMPRAS"
+                android:textSize="40sp"
+                android:textStyle="bold">
+            </TextView>
 
-</FrameLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/priceShop"
+        android:layout_width="194dp"
+        android:layout_height="33dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:background="#A9883507">
+    </TextView>
+
+    <TextView
+        android:id="@+id/Shopfinal"
+        android:layout_width="194dp"
+        android:layout_height="33dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="-35dp"
+        android:text="Total Compra"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:background="#A9883507"
+        ></TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvShop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

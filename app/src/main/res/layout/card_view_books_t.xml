@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_bookt"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="125dp"
+    app:contentPadding="4dp"
+    app:cardCornerRadius="10dp"
+
+
+    >
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="152dp"
+        android:layout_height="119dp"
+        android:backgroundTintMode="multiply"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+       />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#A9883507"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imgBookT"
+            android:layout_width="128dp"
+            android:layout_height="126dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+          ></ImageView>
+
+        <TextView
+            android:id="@+id/TitleBookT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="169dp"
+            android:layout_marginEnd="86dp"
+            android:text="Title"
+            android:textSize="14dp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/tvAuthorBookT"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="177dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="10dp"
+            android:text="Author"
+            android:textAlignment="center"
+            android:textSize="14dp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/tvPriceBook"
+            android:layout_width="79dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="246dp"
+            android:layout_marginTop="119dp"
+            android:text="Price"
+            android:textAlignment="center"
+            android:textSize="14dp"
+            android:textStyle="bold"></TextView>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

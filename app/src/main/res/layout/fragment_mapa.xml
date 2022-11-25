@@ -9,7 +9,7 @@
    <fragment
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:id="@+id/mapa"
+       android:id="@+id/mapa_nav"
        android:name="com.google.android.gms.maps.SupportMapFragment"
 
 
@@ -23,4 +23,6 @@
           android:id="@+id/mapOpenStreet"
           />
    </androidx.cardview.widget.CardView>
+
+
 </FrameLayout>

@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.libraryapp.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class Fragment_menu : Fragment() {
@@ -26,7 +26,7 @@ class Fragment_menu : Fragment() {
 
         val buttonm= view.findViewById<Button>(R.id.button)
         buttonm.setOnClickListener {
-            findNavController().navigate(R.id.action_fragment_menu_to_fragment_terror)
+            findNavController().navigate(R.id.action_booksFragment2_to_book_detail_Fragment)
         }
 
         val buttona= view.findViewById<Button>(R.id.button2)
@@ -50,22 +50,39 @@ class Fragment_menu : Fragment() {
             findNavController().navigate(R.id.action_fragment_menu_to_fragment_compras)
         }
 
-        val imghome= view.findViewById<ImageView>(R.id.casita)
-        imghome.setOnClickListener {
-            findNavController().navigate(R.id.action_fragment_menu_to_fragment_menu)
+        val bthome= view.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        bthome.setOnNavigationItemReselectedListener() {
+            when (it.itemId){
+                R.id.nav_home -> findNavController().navigate(R.id.action_fragment_menu_to_fragment_menu)
+            }
         }
-        val imgf= view.findViewById<ImageView>(R.id.favoritos)
-        imgf.setOnClickListener {
-            findNavController().navigate(R.id.action_fragment_menu_to_fragment_favoritos)
+        val btfavotiros= view.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        btfavotiros.setOnNavigationItemReselectedListener() {
+            when (it.itemId){
+                R.id.nav_favoritos -> findNavController().navigate(R.id.action_fragment_menu_to_fragment_favoritos)
+            }
         }
-        val imgm= view.findViewById<ImageView>(R.id.mapa)
-        imgm.setOnClickListener {
-            findNavController().navigate(R.id.action_fragment_menu_to_fragment_mapa)
+        val btmapa= view.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        btmapa.setOnNavigationItemReselectedListener() {
+            when(it.itemId){
+                R.id.nav_map-> findNavController().navigate(R.id.action_fragment_menu_to_fragment_mapa)
+            }
+
+        }
+
+        val btp= view.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        btp.setOnNavigationItemReselectedListener() {
+            when(it.itemId){
+                R.id.nav_perfil-> findNavController().navigate(R.id.action_fragment_menu_to_fragment_perfil)
+
+            }
+
         }
 
 
 
     }
+
 
 
 }

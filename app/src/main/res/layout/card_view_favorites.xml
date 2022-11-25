@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_book"
+    app:cardElevation="5dp"
+    app:cardBackgroundColor="#A9883507"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:contentPadding="4dp"
+    app:cardCornerRadius="10dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+        <ImageView
+            android:id="@+id/imgBook"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            >
+        </ImageView>
+        <TextView
+            android:id="@+id/tvTitleBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_toRightOf="@+id/imgBook">
+        </TextView>
+        <TextView
+            android:id="@+id/tvAuthorBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Author"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:layout_toRightOf="@+id/imgBook"
+            android:layout_below="@+id/tvTitleBook"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/tvPriceBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:layout_toRightOf="@+id/imgBook"
+            android:layout_below="@+id/tvAuthorBook"
+            >
+        </TextView>
+
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="50dp"
+            android:layout_toRightOf="@id/tvPriceBook"
+            >
+        </Button>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

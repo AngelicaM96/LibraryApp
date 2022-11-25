@@ -4,11 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/fragment_menu">
+
+
     <fragment
         android:id="@+id/fragment_terror"
         android:name="com.example.libraryapp.View.UI.Fragments.Fragment_terror"
         android:label="fragment_terror"
-        tools:layout="@layout/fragment_terror" />
+        tools:layout="@layout/card_view_books_t" />
+
     <fragment
         android:id="@+id/fragment_aventura"
         android:name="com.example.libraryapp.View.UI.Fragments.Fragment_aventura"
@@ -33,9 +36,7 @@
         android:id="@+id/fragment_menu"
         android:name="com.example.libraryapp.View.UI.Fragments.Fragment_menu"
         android:label="Fragment_menu" >
-        <action
-            android:id="@+id/action_fragment_menu_to_fragment_terror"
-            app:destination="@id/fragment_terror" />
+
         <action
             android:id="@+id/action_fragment_menu_to_fragment_aventura"
             app:destination="@id/fragment_aventura" />
@@ -57,15 +58,56 @@
         <action
             android:id="@+id/action_fragment_menu_to_fragment_menu"
             app:destination="@id/fragment_menu" />
+        <action
+            android:id="@+id/action_fragment_menu_to_fragment_perfil"
+            app:destination="@id/fragment_perfil" />
+        <action
+            android:id="@+id/action_fragment_menu_to_booksFragment2"
+            app:destination="@id/booksFragment2" />
+
     </fragment>
     <fragment
         android:id="@+id/fragment_favoritos"
         android:name="com.example.libraryapp.View.UI.Fragments.Fragment_favoritos"
         android:label="fragment_favoritos"
-        tools:layout="@layout/fragment_favoritos" />
+        tools:layout="@layout/fragment_favoritos" >
+        <action
+            android:id="@+id/action_fragment_favoritos_to_bookt_detail_Fragment"
+            app:destination="@id/bookt_detail_Fragment" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_compras"
         android:name="com.example.libraryapp.View.UI.Fragments.Fragment_compras"
         android:label="fragment_compras"
-        tools:layout="@layout/fragment_compras" />
+        tools:layout="@layout/fragment_compras" >
+        <action
+            android:id="@+id/action_fragment_compras_to_fragment_menu"
+            app:destination="@id/fragment_menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_perfil"
+        android:name="com.example.libraryapp.View.UI.Fragments.Fragment_perfil"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" />
+
+    <fragment
+        android:id="@+id/bookt_detail_Fragment"
+        android:name="com.example.libraryapp.View.UI.Fragments.Bookt_detail_fragment"
+        android:label="Bookt_detail_Fragment" />
+    <fragment
+        android:id="@+id/booksFragment2"
+        android:name="com.example.libraryapp.View.UI.Fragments.Fragment_terror"
+        android:label="fragment_terror"
+        tools:layout="@layout/fragment_terror" >
+        <action
+            android:id="@+id/action_booksFragment2_to_bookt_detail_Fragment"
+            app:destination="@id/bookt_detail_Fragment" />
+        <action
+            android:id="@+id/action_booksFragment2_to_fragment_terror2"
+            app:destination="@id/fragment_terror" />
+    </fragment>
+    <action
+        android:id="@+id/action_booksFragment2_to_book_detail_Fragment"
+        app:destination="@id/bookt_detail_Fragment"/>
+
 </navigation>

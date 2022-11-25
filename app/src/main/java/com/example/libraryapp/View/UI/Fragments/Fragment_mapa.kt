@@ -1,10 +1,14 @@
 package com.example.libraryapp.View.UI.Fragments
 
+import android.annotation.SuppressLint
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.inflate
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.libraryapp.R
 import com.google.android.gms.maps.GoogleMap
@@ -26,8 +30,8 @@ class Fragment_mapa : Fragment(), OnMapReadyCallback {
 
     lateinit var mapView: MapView
 
-    var _binding: FragmentMapaBinding?=null
-    val binding get()= _binding!!
+    //var _binding: FragmentMapaBinding?=null
+    //val binding get()= _binding!!
 
 
     override fun onCreateView(
@@ -35,8 +39,7 @@ class Fragment_mapa : Fragment(), OnMapReadyCallback {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding= FragmentMapaBinding.inflate(inflater, container, false)
-        val view= binding.root
+        val view= inflater.inflate(R.layout.fragment_mapa, container, false)
         return view
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +51,7 @@ class Fragment_mapa : Fragment(), OnMapReadyCallback {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //Google Maps
-        val mapFragment= this.childFragmentManager.findFragmentById(R.id.mapa) as SupportMapFragment
+        val mapFragment= this.childFragmentManager.findFragmentById(R.id.mapa_nav) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
 
@@ -57,7 +60,7 @@ class Fragment_mapa : Fragment(), OnMapReadyCallback {
         mapView.setTileSource(TileSourceFactory.MAPNIK);
 
         //Open Street Map Location
-        val geoPoint= GeoPoint(5.070275,-75.513817)
+        val geoPoint= GeoPoint(2.9273, -75.28189)
         val mapController= mapView.controller
         mapController.setZoom(16.0)
         mapController.setCenter(geoPoint)
@@ -73,10 +76,41 @@ class Fragment_mapa : Fragment(), OnMapReadyCallback {
     }
 
     override fun onMapReady(map: GoogleMap) {
-        val colombia= LatLng(5.070275,-75.513817)
+        val colombia= LatLng(2.9273,-75.28189)
         map?.let {
             this.googleMap= it
-            map.addMarker(MarkerOptions().position(colombia))
+            map.addMarker(MarkerOptions().position(colombia).title("LibraryApp Neiva"))
+        }
+        enableLocation()
+    }
+
+    companion object{
+        const val REQUEST_CODE_LOCATION=0
+
+    }
+
+    fun isLocationPermissionGrated()= ContextCompat.checkSelfPermission(
+        this.requireContext(),android.Manifest.permission.ACCESS_FINE_LOCATION
+    )== PackageManager.PERMISSION_GRANTED
+
+    fun requestLocationPermission(){
+        if(ActivityCompat.shouldShowRequestPermissionRationale(this.requireActivity(),
+                android.Manifest.permission.ACCESS_FINE_LOCATION)){
+            Toast.makeText(this.context,"Activar permisos de ubicación",Toast.LENGTH_LONG).show()
+        }else{
+            ActivityCompat.requestPermissions(this.requireActivity(), arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
+                com.example.libraryapp.View.UI.Fragments.Fragment_mapa.Companion.REQUEST_CODE_LOCATION
+            )
+        }
+    }
+
+    @SuppressLint("MissingPermission")
+    fun enableLocation(){
+        if(!::googleMap.isInitialized)return
+        if(isLocationPermissionGrated()){
+            googleMap.isMyLocationEnabled=true
+        }else{
+            requestLocationPermission()
         }
     }
 
