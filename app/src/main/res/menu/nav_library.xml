@@ -12,7 +12,7 @@
         android:title="@string/favoritos"/>
 
     <item
-        android:id="@+id/nav_map"
+        android:id="@+id/nav_mapa"
         android:enabled="true"
         android:icon="@drawable/ic_mapa"
         android:title="@string/mapa"/>

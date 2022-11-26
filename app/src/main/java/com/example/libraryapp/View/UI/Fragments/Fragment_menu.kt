@@ -26,7 +26,7 @@ class Fragment_menu : Fragment() {
 
         val buttonm= view.findViewById<Button>(R.id.button)
         buttonm.setOnClickListener {
-            findNavController().navigate(R.id.action_booksFragment2_to_book_detail_Fragment)
+            findNavController().navigate(R.id.action_fragment_menu_to_fragment_mapa)
         }
 
         val buttona= view.findViewById<Button>(R.id.button2)
@@ -41,10 +41,7 @@ class Fragment_menu : Fragment() {
             findNavController().navigate(R.id.action_fragment_menu_to_fragment_romanticas)
         }
 
-        val buttonf= view.findViewById<Button>(R.id.button4)
-        buttonf.setOnClickListener {
-            findNavController().navigate(R.id.action_fragment_menu_to_fragment_fantasia)
-        }
+
         val imgcar= view.findViewById<ImageView>(R.id.carrito)
         imgcar.setOnClickListener {
             findNavController().navigate(R.id.action_fragment_menu_to_fragment_compras)
@@ -57,7 +54,7 @@ class Fragment_menu : Fragment() {
             }
         }
         val btfavotiros= view.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
-        btfavotiros.setOnNavigationItemReselectedListener() {
+        btfavotiros.setOnNavigationItemReselectedListener {
             when (it.itemId){
                 R.id.nav_favoritos -> findNavController().navigate(R.id.action_fragment_menu_to_fragment_favoritos)
             }
@@ -65,7 +62,7 @@ class Fragment_menu : Fragment() {
         val btmapa= view.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         btmapa.setOnNavigationItemReselectedListener() {
             when(it.itemId){
-                R.id.nav_map-> findNavController().navigate(R.id.action_fragment_menu_to_fragment_mapa)
+                R.id.nav_mapa-> findNavController().navigate(R.id.action_fragment_menu_to_fragment_mapa)
             }
 
         }

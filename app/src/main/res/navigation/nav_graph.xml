@@ -10,7 +10,11 @@
         android:id="@+id/fragment_terror"
         android:name="com.example.libraryapp.View.UI.Fragments.Fragment_terror"
         android:label="fragment_terror"
-        tools:layout="@layout/card_view_books_t" />
+        tools:layout="@layout/card_view_books_t" >
+        <action
+            android:id="@+id/action_fragment_terror_to_bookt_detail_Fragment"
+            app:destination="@id/bookt_detail_Fragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/fragment_aventura"
@@ -62,8 +66,8 @@
             android:id="@+id/action_fragment_menu_to_fragment_perfil"
             app:destination="@id/fragment_perfil" />
         <action
-            android:id="@+id/action_fragment_menu_to_booksFragment2"
-            app:destination="@id/booksFragment2" />
+            android:id="@+id/action_fragment_menu_to_fragment_terror2"
+            app:destination="@id/fragment_terror2" />
 
     </fragment>
     <fragment
@@ -95,15 +99,12 @@
         android:name="com.example.libraryapp.View.UI.Fragments.Bookt_detail_fragment"
         android:label="Bookt_detail_Fragment" />
     <fragment
-        android:id="@+id/booksFragment2"
+        android:id="@+id/fragment_terror2"
         android:name="com.example.libraryapp.View.UI.Fragments.Fragment_terror"
         android:label="fragment_terror"
-        tools:layout="@layout/fragment_terror" >
+        tools:layout="@layout/card_view_books_t" >
         <action
-            android:id="@+id/action_booksFragment2_to_bookt_detail_Fragment"
-            app:destination="@id/bookt_detail_Fragment" />
-        <action
-            android:id="@+id/action_booksFragment2_to_fragment_terror2"
+            android:id="@+id/action_booksFragment2_to_fragment_terror"
             app:destination="@id/fragment_terror" />
     </fragment>
     <action

@@ -78,8 +78,8 @@ class Fragment_perfil : Fragment() {
 
         database.child(user?.uid.toString()).addValueEventListener(object:ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-                name.setText(snapshot.child("Nombre").value.toString())
-                phone.setText(snapshot.child("Teléfono").value.toString())
+                name.setText(snapshot.child("name").value.toString())
+                phone.setText(snapshot.child("phone").value.toString())
             }
             override fun onCancelled(error: DatabaseError) {
             }
